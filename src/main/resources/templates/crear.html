@@ -22,7 +22,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                           th:action="@{/save}"
                           method="POST"
                           >
-                            <div class="form-group mb-3 row">
+                        <input type="hidden" th:field="*{id}">
+                        <div class="form-group mb-3 row">
                             <label class="form-control-sm col-form-label col-md-2" for="artistas">Artistas</label>
                             <div class="col-sm-10">
                                 <select th:field="*{artistas}" class="form-control form-control-sm col-md-6" id="artistas" aria-describedby="emailHelp">
@@ -35,29 +36,36 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
 
 
-                            <div class="form-group mb-3 row">
-                                <label class="form-control-sm col-form-label col-md-2" for="costo">costo</label>
-                                <div class="col-sm-10">
-                                    <input type="text" th:field="*{costo}" class="form-control form-control-sm col-md-6" placeholder= "$25" id="costo" aria-describedby="emailHelp">
-                                </div>
+                        <div class="form-group mb-3 row">
+                            <label class="form-control-sm col-form-label col-md-2" for="costo">costo</label>
+                            <div class="col-sm-10">
+                                <input type="text" th:field="*{costo}" class="form-control form-control-sm col-md-6" placeholder= "$25" id="costo" aria-describedby="emailHelp">
                             </div>
-                            
-                             <div class="form-group mb-3 row">
-                                <label class="form-control-sm col-form-label col-md-2" for="fecha">fecha</label>
-                                <div class="col-sm-10">
-                                    <input type="text" th:field="*{fecha}" class="form-control form-control-sm col-md-6" placeholder= "10/06/2022" id="fecha" aria-describedby="emailHelp">
-                                </div>
-                            </div>
-                            
-                              <div class="form-group mb-3 row">
-                                <label class="form-control-sm col-form-label col-md-2" for="capacidad">capacidad</label>
-                                <div class="col-sm-10">
-                                    <input type="text" th:field="*{capacidad}" class="form-control form-control-sm col-md-6" placeholder= "20,000" id="capacidad" aria-describedby="emailHelp">
-                                </div>
-                            </div>
+                        </div>
 
-                            
-                            <button type="Guardar" class="btn btn-primary" value="Guardar">Submit</button>
+                        <div class="form-group mb-3 row">
+                            <label class="form-control-sm col-form-label col-md-2" for="fecha">fecha</label>
+                            <div class="col-sm-10">
+                                <input type="text" th:field="*{fecha}" class="form-control form-control-sm col-md-6" placeholder= "10/06/2022" id="fecha" aria-describedby="emailHelp">
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3 row">
+                            <label class="form-control-sm col-form-label col-md-2" for="capacidad">capacidad</label>
+                            <div class="col-sm-10">
+                                <input type="text" th:field="*{capacidad}" class="form-control form-control-sm col-md-6" placeholder= "20,000" id="capacidad" aria-describedby="emailHelp">
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3 row">
+                            <label class="form-control-sm col-form-label col-md-2" for="lugar">Lugar</label>
+                            <div class="col-sm-10">
+                                <input type="text" th:field="*{lugar}" class="form-control form-control-sm col-md-6" placeholder= "Estadio Nacional" id="lugar" aria-describedby="emailHelp">
+                            </div>
+                        </div>
+
+
+                        <button type="Guardar" class="btn btn-primary" value="Guardar">Submit</button>
                     </form>
                 </div>
             </div>

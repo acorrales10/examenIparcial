@@ -30,7 +30,7 @@ public class Conciertos implements Serializable {
     private String lugar;
 
     @ManyToOne
-    @JoinColumn(name = "artistas_id")
+    @JoinColumn(name = "artista_id")
     private Artistas artistas;
 
     public long getId() {

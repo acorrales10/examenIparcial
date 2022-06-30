@@ -5,7 +5,6 @@
 package com.iticket.service;
 
 import com.iticket.entity.Artistas;
-import com.iticket.entity.Conciertos;
 import com.iticket.repository.ArtistasRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,18 +26,18 @@ public class ArtistasService implements IArtistasService{
     }
 
     @Override
-    public Conciertos getArtistasById(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Artistas getArtistasById(long id) {
+        return artistasRepository.findById(id).orElse(null);
     }
 
     @Override
     public void saveArtistas(Artistas artistas) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        artistasRepository.save(artistas);
     }
 
     @Override
     public void delete(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        artistasRepository.deleteById(id);
     }
     
 }

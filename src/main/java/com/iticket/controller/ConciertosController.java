@@ -60,7 +60,7 @@ public class ConciertosController {
     public String editarConcierto(@PathVariable("id") Long idConcierto, Model model) {
         Conciertos concierto = conciertosService.getConciertosById(idConcierto);
         List<Artistas> listaArtistas = artistasService.ListArtistas();
-        model.addAttribute("conciertos", concierto);
+        model.addAttribute("concierto", concierto);
         model.addAttribute("artistas", listaArtistas);
         return "crear";
 

@@ -15,7 +15,7 @@ import java.util.List;
 public interface IArtistasService {
     
     public List<Artistas> ListArtistas();  
-    public Conciertos getArtistasById (long id);
+    public Artistas getArtistasById (long id);
     public void saveArtistas(Artistas artistas);
     public void delete (long id);
 }

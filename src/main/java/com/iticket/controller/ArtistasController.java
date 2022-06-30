@@ -5,10 +5,7 @@
 package com.iticket.controller;
 
 import com.iticket.entity.Artistas;
-import com.iticket.entity.Conciertos;
-import com.iticket.service.ConciertosService;
 import com.iticket.service.IArtistasService;
-import com.iticket.service.IConciertosService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -44,7 +41,7 @@ public class ArtistasController {
 
     }
 
-    @PostMapping("/save")
+    @PostMapping("/saveA")
     public String guardarArtistas(@ModelAttribute Artistas artistas) {
         artistasService.saveArtistas(artistas);
         return "redirect:/artistas";
@@ -52,7 +49,7 @@ public class ArtistasController {
 
     @GetMapping("/editArtistas/{id}")
     public String editarArtista(@PathVariable("id") Long idArtista, Model model) {
-        Conciertos artistas = artistasService.getArtistasById(idArtista);
+        Artistas artistas = artistasService.getArtistasById(idArtista);
         List<Artistas> listaArtistas = artistasService.ListArtistas();
         model.addAttribute("Artistas", artistas);
         model.addAttribute("artistas", listaArtistas);
@@ -60,7 +57,7 @@ public class ArtistasController {
 
     }
 
-    @GetMapping("/delete/{id}")
+    @GetMapping("/deleteA/{id}")
     public String eliminarArtistas(@PathVariable("id") Long idartistas, Model model) {
         artistasService.delete(idartistas);
         return "redirect:/artistas";
